@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เฟิร์ส | Portfolio</title>
+    <link href="./output.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-white font-poppins scroll-smooth">
+    <!-- Navbar -->
+    <nav class="bg-purple-800 py-4 px-6 flex justify-between items-center fixed w-full top-0 z-10">
+        <div class="text-2xl font-bold text-green-400">เฟิร์ส</div>
+        <label for="menu-toggle" class="md:hidden block cursor-pointer">
+            <svg class="fill-current text-white" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                <title>menu</title>
+                <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+            </svg>
+        </label>
+        <input class="hidden" type="checkbox" id="menu-toggle" />
+        <div class="hidden md:flex md:items-center md:w-auto w-full" id="menu">
+            <nav>
+                <ul class="md:flex items-center justify-between text-base pt-4 md:pt-0 space-x-6">
+                    <li><a href="#home" class="text-green-400 hover:text-green-500 md:p-4 py-3 px-0 block">Home</a></li>
+                    <li><a href="#about" class="text-gray-300 hover:text-green-500 md:p-4 py-3 px-0 block">About Me</a></li>
+                    <li><a href="#education" class="text-gray-300 hover:text-green-500 md:p-4 py-3 px-0 block">Education</a></li>
+                    <li><a href="#experience" class="text-gray-300 hover:text-green-500 md:p-4 py-3 px-0 block">Experience</a></li>
+                    <li><a href="#contact" class="text-gray-300 hover:text-green-500 md:p-4 py-3 px-0 block md:mb-0 mb-2">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-900 to-purple-900 pt-20">
+        <div class="flex flex-col md:flex-row items-center max-w-6xl mx-auto px-6 gap-6">
+            <!-- ข้อความ -->
+            <div class="md:w-1/2 text-center md:text-left">
+                <h4 class="text-xl md:text-2xl font-semibold bg-gray-900/40 p-3 inline-block">
+                    สวัสดี, กูชื่อ <span class="text-green-400 font-serif">เฟิร์ส</span>
+                </h4>
+                <h1 class="mt-4 text-3xl md:text-4xl font-bold">
+                    กูคือ <span class="typing text-green-400"></span>
+                </h1>
+                <p class="mt-4 text-lg text-gray-300">
+                    เรียนรู้ด้วยตัวเอง จบ ม.6 ฝึกโค้ดมาแล้ว 1 ปี เน้นลงมือทำจริง
+                </p>
+                <div class="mt-6 flex flex-col md:flex-row gap-4 justify-center md:justify-start">
+                    <a href="#contact" class="bg-green-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-600 transition">
+                        Hire Me
+                    </a>
+                    <a href="#" class="bg-yellow-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-yellow-600 transition">
+                        Download CV
+                    </a>
+                </div>
+            </div>
+            <!-- รูป -->
+            <div class="md:w-1/2 flex justify-center">
+                <img src="1.jpg" alt="รูปเฟิร์ส" class="w-64 h-64 md:w-80 md:h-80 rounded-full sm:rounded-br-[5rem] sm:rounded-tl-[5rem] border-4 border-green-400/60">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="py-16 px-6 bg-gray-800">
+        <h2 class="text-4xl font-bold text-center text-green-400 mb-8">เกี่ยวกับกู</h2>
+        <div class="max-w-4xl mx-auto text-center text-gray-300">
+            <p class="text-lg">
+                กูชื่อเฟิร์ส อายุ 19 ปี เป็นโปรแกรมเมอร์ที่เรียนรู้ด้วยตัวเอง ชอบลงมือทำมากกว่าอ่านทฤษฎี
+                กูมี ADHD, ซึมเศร้า, วิตกกังวล แต่ก็พยายามฝึกโค้ดทุกวันเพื่อพัฒนาตัวเอง
+            </p>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-16 px-6 bg-gray-900">
+        <h2 class="text-4xl font-bold text-center text-green-400 mb-8">การศึกษา</h2>
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="bg-gray-800 p-6 rounded-lg border border-green-400/60">
+                <h3 class="text-2xl font-semibold text-white">ม.6</h3>
+                <p class="text-gray-400 mt-2">โรงเรียนมัธยมแห่งหนึ่ง - จบการศึกษา 2566</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-16 px-6 bg-gray-800">
+        <h2 class="text-4xl font-bold text-center text-green-400 mb-8">ประสบการณ์</h2>
+        <div class="max-w-4xl mx-auto grid grid-cols-1 gap-6">
+            <div class="bg-gray-900 p-6 rounded-lg border border-green-400/60 hover:scale-105 transition">
+                <h3 class="text-2xl font-semibold text-white">โปรเจกต์ส่วนตัว: ออกแบบLanding page ให้คุณครูคอมพิวเตอร์</h3>
+                <a href="https://assfirst.github.io/lin1/index.html">ออกแบบLanding page</a>
+        </div>
+            </div>
+            <div class="max-w-4xl mx-auto grid grid-cols-1 gap-6">
+                <div class="bg-gray-900 p-6 rounded-lg border border-green-400/60 hover:scale-105 transition">
+                    <h3 class="text-2xl font-semibold text-white">โปรเจกต์ส่วนตัว: ออกแบบLanding page โรงเรียนปลวกแดงวิทยาคม</h3>
+                <a href="https://assfirst.github.io/lin1/index.html">ออกแบบLanding page</a>
+                </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 px-6 bg-gray-900 border-t border-gray-700">
+        <h2 class="text-4xl font-bold text-center text-green-400 mb-8">ติดต่อกู</h2>
+        <div class="max-w-4xl mx-auto text-center text-gray-300">
+            <p class="text-lg">Email: first@example.com</p>
+            <p class="text-lg mt-2">IG: @firstcode</p>
+            <div class="mt-6">
+                <a href="mailto:first@example.com" class="bg-green-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-600 transition">
+                    ส่งเมลหาเลย
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Typed.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js" referrerpolicy="no-referrer"></script>
+    <script>
+        var typed = new Typed('.typing', {
+            strings: ['', 'โปรแกรมเมอร์สายโหด,', 'นักพัฒนาเว็บ,', 'คนชอบลองของใหม่.'],
+            typeSpeed: 100,
+            backSpeed: 60,
+            loop: true
+        });
+    </script>
+</body>
+</html>
