@@ -38,13 +38,13 @@
     * **รายละเอียด:** ออกแบบและพัฒนาหน้า Landing Page แบบง่ายๆ
     * **เทคโนโลยี:** HTML, CSS
     * **ดูของจริง:** [https://assfirst.github.io/lin1/index.html](https://assfirst.github.io/lin1/index.html)
-    * **(แนะนำ)** *[ใส่ Screenshot ของ Landing Page นี้]*
+   
 
 3.  **Landing Page ร.ร.ปลวกแดงวิทยาคม**
     * **รายละเอียด:** ออกแบบและพัฒนาหน้า Landing Page แบบง่ายๆ
     * **เทคโนโลยี:** HTML, CSS
     * **ดูของจริง:** [https://assfirst.github.io/land2/index2.html](https://assfirst.github.io/land2/index2.html)
-    * **(แนะนำ)** *[ใส่ Screenshot ของ Landing Page นี้]*
+
 
 
 
