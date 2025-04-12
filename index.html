@@ -1,470 +1,251 @@
 <!DOCTYPE html>
-<html lang="th" class="scroll-smooth">
+<html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Chakron Yaraket's Portfolio - Young Self-Taught Developer Passionate About Coding">
-    <title>Chakron Yaraket | Portfolio [Gaming Edition]</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Chakron Yaraket - Portfolio</title>
+    <meta name="description" content="พอร์ตโฟลิโอของ Chakron Yaraket - Self-Taught Full Stack Developer">
+    <meta name="keywords" content="Chakron Yaraket, Full Stack Developer, Portfolio, Web Development">
+    <meta name="author" content="Chakron Yaraket">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        /* --- CSS Variables for Gaming Theme --- */
         :root {
-            --bg-primary: #0a0a0a; /* Near Black */
-            --bg-secondary: #1f2937; /* gray-800 */
-            --bg-card: #111827; /* gray-900 */
-            --text-primary: #e5e7eb; /* gray-200 */
-            --text-secondary: #9ca3af; /* gray-400 */
-            --accent-1: #00FFFF; /* Cyan */
-            --accent-2: #00FF00; /* Lime */
-            --accent-3: #FF00FF; /* Magenta */
-            --border-color: #374151; /* gray-700 */
-            --font-heading: 'Orbitron', sans-serif;
-            --font-body: 'Poppins', sans-serif;
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #1a1a2e;
+            --bg-card: #2a2a3e;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0c0;
+            --accent-1: #00ffea;
+            --accent-2: #ff00ff;
+            --accent-3: #00ff00;
+            --border-color: #ffffff1a;
         }
 
-        /* --- Base Styles --- */
         body {
+            font-family: 'IBM Plex Sans Thai', sans-serif;
             background-color: var(--bg-primary);
             color: var(--text-primary);
-            font-family: var(--font-body);
+            margin: 0;
+            overflow-x: hidden;
         }
-        h1, h2, h3, h4, h5, h6 {
-            font-family: var(--font-heading);
-            color: var(--accent-1); /* Default heading color */
-            text-shadow: 0 0 8px color-mix(in srgb, var(--accent-1) 50%, transparent);
-        }
-        /* --- Custom Animations --- */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-fade-in {
-            animation: fadeIn 1s ease-out 0.5s; /* Added delay */
-             animation-fill-mode: backwards; /* Start hidden before animation */
-        }
-        @keyframes rgbGlowBorder {
-             0% { border-color: var(--accent-1); box-shadow: 0 0 12px color-mix(in srgb, var(--accent-1) 70%, transparent); }
-             33% { border-color: var(--accent-2); box-shadow: 0 0 12px color-mix(in srgb, var(--accent-2) 70%, transparent); }
-             66% { border-color: var(--accent-3); box-shadow: 0 0 12px color-mix(in srgb, var(--accent-3) 70%, transparent); }
-             100% { border-color: var(--accent-1); box-shadow: 0 0 12px color-mix(in srgb, var(--accent-1) 70%, transparent); }
-        }
-         .animate-rgb-border {
-             animation: rgbGlowBorder 4s linear infinite;
-             border-width: 2px;
-             border-style: solid;
-         }
-         @keyframes subtlePulse {
-             0%, 100% { opacity: 0.8; }
-             50% { opacity: 1; }
-         }
-         .animate-subtle-pulse {
-            animation: subtlePulse 2s ease-in-out infinite;
-         }
 
-        /* --- Component Styles --- */
-        /* Navbar */
-        nav {
-            background-color: rgba(10, 10, 10, 0.8); /* Slightly transparent */
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border-color);
-            box-shadow: 0 4px 15px -5px color-mix(in srgb, var(--accent-2) 30%, transparent);
+        /* แอนิเมชัน */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
-        .nav-link {
-            color: var(--accent-2);
-            text-shadow: 0 0 5px color-mix(in srgb, var(--accent-2) 80%, transparent);
-            transition: color 0.3s ease, text-shadow 0.3s ease;
-            position: relative;
-            padding-bottom: 4px;
+
+        @keyframes slideInLeft {
+            from { transform: translateX(-100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
         }
-         .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: var(--accent-3);
-            transition: width 0.3s ease;
-            box-shadow: 0 0 8px color-mix(in srgb, var(--accent-3) 70%, transparent);
-         }
-        .nav-link:hover {
-            color: var(--accent-3);
-            text-shadow: 0 0 8px color-mix(in srgb, var(--accent-3) 80%, transparent);
+
+        @keyframes rgbGlowBorder {
+            0% { border-color: var(--accent-1); }
+            33% { border-color: var(--accent-2); }
+            66% { border-color: var(--accent-3); }
+            100% { border-color: var(--accent-1); }
         }
-         .nav-link:hover::after {
-             width: 100%;
-         }
-        /* Mobile Menu */
-        #mobile-menu {
-            background-color: rgba(17, 24, 39, 0.95); /* bg-gray-900 with opacity */
-            backdrop-filter: blur(5px);
+
+        @keyframes subtlePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
         }
-        .mobile-menu-link {
-             font-family: var(--font-heading);
-             font-size: 1.5rem; /* Adjusted size */
-             color: var(--accent-1);
-             transition: color 0.3s ease;
-        }
-        .mobile-menu-link:hover {
-             color: var(--accent-3);
-        }
-        /* Hero Section */
-        #home {
-            /* Keep the image, add overlay */
-            position: relative;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-        #home::before { /* Overlay */
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, rgba(10, 10, 10, 0.9) 0%, rgba(10, 10, 10, 0.7) 50%, rgba(10, 10, 10, 0.9) 100%),
-                        radial-gradient(ellipse at center, rgba(17, 24, 39, 0.1) 0%, rgba(10, 10, 10, 0.9) 100%);
-            z-index: 1;
-        }
-        #home > div { /* Content container */
-            position: relative;
-            z-index: 2;
-        }
-        /* Buttons */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.5rem; /* py-3 px-6 */
-            border-radius: 9999px; /* rounded-full */
-            font-weight: 600; /* font-semibold */
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        .btn-primary {
-            background-color: var(--accent-1);
-            color: var(--bg-primary);
-            box-shadow: 0 0 15px -3px color-mix(in srgb, var(--accent-1) 70%, transparent);
-        }
-        .btn-primary:hover {
-            background-color: color-mix(in srgb, var(--accent-1) 85%, white);
-            box-shadow: 0 0 25px -3px color-mix(in srgb, var(--accent-1) 90%, transparent);
-            transform: translateY(-2px);
-        }
-        .btn-secondary {
-            background-color: var(--accent-3);
-            color: white;
-            box-shadow: 0 0 15px -3px color-mix(in srgb, var(--accent-3) 70%, transparent);
-        }
-         .btn-secondary:hover {
-            background-color: color-mix(in srgb, var(--accent-3) 85%, white);
-            box-shadow: 0 0 25px -3px color-mix(in srgb, var(--accent-3) 90%, transparent);
-            transform: translateY(-2px);
-         }
-        /* Section Cards */
+
+        .animate-fade-in { animation: fadeIn 1.5s ease-in-out; }
+        .animate-slide-in-left { animation: slideInLeft 1s ease-out; }
+        .animate-rgb-border { animation: rgbGlowBorder 4s linear infinite; }
+        .animate-subtle-pulse { animation: subtlePulse 2s infinite; }
+
+        /* ปรับแต่งการ์ดในส่วนผลงาน */
         .card {
             background-color: var(--bg-card);
             border: 1px solid var(--border-color);
             box-shadow: 0 4px 10px -5px rgba(0, 0, 0, 0.4);
             transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
+
         .card:hover {
-            transform: translateY(-5px) scale(1.02);
+            transform: translateY(-8px) scale(1.03);
             border-color: var(--accent-2);
-            box-shadow: 0 10px 25px -8px color-mix(in srgb, var(--accent-2) 40%, transparent);
-        }
-        /* Contact Link Hover */
-        #contact a:hover {
-             color: var(--accent-3);
-             text-shadow: 0 0 8px color-mix(in srgb, var(--accent-3) 80%, transparent);
-        }
-        /* Footer */
-        footer {
-            background-color: var(--bg-primary);
-            color: var(--text-secondary);
-            border-top: 1px solid var(--border-color);
+            box-shadow: 0 12px 30px -8px color-mix(in srgb, var(--accent-2) 50%, transparent);
         }
 
-        /* Custom Scrollbar */
-        /* (Keep the scrollbar styles from previous CSS) */
-        ::-webkit-scrollbar { width: 8px; height: 8px; }
-        ::-webkit-scrollbar-track { background: var(--bg-secondary); border-radius: 10px; }
-        ::-webkit-scrollbar-thumb { background: var(--accent-1); border-radius: 10px; border: 1px solid var(--bg-secondary); }
-        ::-webkit-scrollbar-thumb:hover { background: color-mix(in srgb, var(--accent-1) 85%, white); }
+        .card:hover::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 2px solid transparent;
+            animation: rgbGlowBorder 4s linear infinite;
+        }
 
+        .card h3 {
+            color: var(--accent-1);
+            text-shadow: 0 0 8px color-mix(in srgb, var(--accent-1) 50%, transparent);
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+        }
+
+        .card:hover h3 {
+            color: var(--accent-3);
+            text-shadow: 0 0 12px color-mix(in srgb, var(--accent-3) 70%, transparent);
+        }
+
+        .card a {
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            background-color: color-mix(in srgb, var(--accent-1) 20%, transparent);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .card a:hover {
+            background-color: var(--accent-1);
+            transform: translateX(5px);
+        }
+
+        .card img {
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover img {
+            transform: scale(1.05);
+        }
+
+        /* ปุ่มใน Hero Section */
+        .hero-button {
+            background-color: color-mix(in srgb, var(--accent-1) 20%, transparent);
+            border: 1px solid var(--accent-1);
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .hero-button:hover {
+            background-color: var(--accent-1);
+            transform: scale(1.05);
+        }
     </style>
 </head>
-<body class="text-base md:text-lg"> 
-
-   
-    <nav class="py-4 px-6 md:px-10 flex justify-between items-center fixed w-full top-0 z-40">
-        <div class="text-2xl md:text-3xl font-bold text-[var(--accent-2)] tracking-wider" style="text-shadow: 0 0 8px color-mix(in srgb, var(--accent-2) 80%, transparent);">Chakron Y.</div>
-        <div class="md:hidden">
-            <button id="mobile-menu-toggle" class="text-[var(--accent-2)] focus:outline-none">
-                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-            </button>
-        </div>
-        <div id="nav-menu" class="hidden md:flex items-center space-x-8">
-            <a href="#home" class="nav-link">Home</a>
-            <a href="#about" class="nav-link">About</a>
-            <a href="#education" class="nav-link">Education</a>
-            <a href="#experience" class="nav-link">Experience</a>
-            <a href="#contact" class="nav-link">Contact</a>
-        </div>
-        <div id="mobile-menu" class="fixed inset-0 z-50 hidden flex flex-col items-center justify-center space-y-8">
-             <button id="mobile-menu-close" class="absolute top-6 right-6 text-white">
-                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-             </button>
-             <a href="#home" class="mobile-menu-link">Home</a>
-             <a href="#about" class="mobile-menu-link">About</a>
-             <a href="#education" class="mobile-menu-link">Education</a>
-             <a href="#experience" class="mobile-menu-link">Experience</a>
-             <a href="#contact" class="mobile-menu-link">Contact</a>
-        </div>
-    </nav>
-
-
-    <section id="home" class="min-h-screen flex items-center justify-center pt-24 pb-16 px-4" style="background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
-        <div class="flex flex-col lg:flex-row items-center max-w-6xl mx-auto gap-8 md:gap-12 animate-fade-in">
-      
-            <div class="lg:w-1/2 text-center lg:text-left">
-                <h4 class="text-xl md:text-2xl font-semibold text-[var(--text-secondary)] mb-2">
-                    สวัสดีครับผมชื่อ <span class="text-[var(--accent-1)] font-bold">Chakron Yaraket</span>
-                </h4>
-                <h1 class="mt-1 text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
-                    ผมคือ <span class="typing text-[var(--accent-2)]"></span>
-                </h1>
-                <p class="mt-4 text-lg md:text-xl text-[var(--text-primary)] max-w-lg mx-auto lg:mx-0">
-                    โปรแกรมเมอร์เรียนรู้ด้วยตัวเอง จบ ม.6 มีความมุ่งมั่นในการเขียนโค้ดและพัฒนาเว็บแอปพลิเคชัน
-                </p>
-                <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                    <a href="#contact" class="btn btn-primary animate-subtle-pulse">
-                        Hire Me
-                    </a>
-                    <a href="cv.pdf" download class="btn btn-secondary">
-                        Download CV
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                    </a>
-                </div>
-            </div>
-       
-            <div class="lg:w-1/2 flex justify-center mt-8 lg:mt-0">
-                 <img src="2.jpg" alt="Chakron Yaraket - Self-Taught Developer" class="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover animate-rgb-border">
-            </div>
+<body>
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center text-center px-6 bg-[var(--bg-primary)]">
+        <div class="max-w-4xl mx-auto animate-slide-in-left">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">
+                สวัสดี! ผม <span class="text-[var(--accent-1)]">Chakron Yaraket</span>
+            </h1>
+            <p class="text-lg md:text-2xl text-[var(--text-secondary)] mb-8">
+                Self-Taught Full Stack Developer ที่หลงใหลในการสร้างสรรค์ผ่านโค้ด
+            </p>
+            <a href="#experience" class="hero-button text-[var(--accent-1)] font-semibold animate-subtle-pulse">ดูผลงานของผม</a>
         </div>
     </section>
 
-
-    <section id="about" class="py-16 md:py-24 px-6 bg-[var(--bg-secondary)]">
-        <div class="max-w-4xl mx-auto animate-fade-in">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">เกี่ยวกับผม</h2>
-            <div class="text-center text-[var(--text-primary)] text-lg md:text-xl mb-12">
-                <p class="mb-4">
-                    ผมชื่อเฟิร์ส อายุ 19 ปี เป็นโปรแกรมเมอร์ที่เรียนรู้ด้วยตัวเอง ชอบลงมือทำจริง มีความหลงใหลในการสร้างสรรค์สิ่งใหม่ๆ ด้วยโค้ด
-                </p>
-                <p>
-                    ถึงแม้จะมี ADHD, ซึมเศร้า, และวิตกกังวล ผมก็ไม่หยุดที่จะเรียนรู้และพัฒนาตัวเองทุกวัน เพื่อเป้าหมายในการเป็นนักพัฒนาที่เก่งขึ้น
-                </p>
-            </div>
-
-            <div class="mb-12">
-                <h3 class="text-2xl md:text-3xl font-semibold text-[var(--accent-2)] mb-6 text-center">ทักษะปัจจุบัน</h3>
-                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 text-center">
-                   
-                    <div class="card p-4 rounded-lg"><span class="font-semibold text-white block">HTML</span> <span class="text-sm text-[var(--text-secondary)]">ปานกลาง</span></div>
-                    <div class="card p-4 rounded-lg"><span class="font-semibold text-white block">CSS</span> <span class="text-sm text-[var(--text-secondary)]">เริ่มต้น</span></div>
-                    <div class="card p-4 rounded-lg"><span class="font-semibold text-white block">Tailwind CSS</span> <span class="text-sm text-[var(--text-secondary)]">เริ่มต้น</span></div>
-                    <div class="card p-4 rounded-lg"><span class="font-semibold text-white block">JavaScript</span> <span class="text-sm text-[var(--text-secondary)]">เริ่มต้น</span></div>
-                    <div class="card p-4 rounded-lg"><span class="font-semibold text-white block">React.js</span> <span class="text-sm text-[var(--text-secondary)]">เริ่มต้น</span></div>
-                    <div class="card p-4 rounded-lg"><span class="font-semibold text-white block">Python Backend</span> <span class="text-sm text-[var(--text-secondary)]">ปานกลาง</span></div>
-                    <div class="card p-4 rounded-lg"><span class="font-semibold text-white block">Node.js</span> <span class="text-sm text-[var(--text-secondary)]">เริ่มต้น</span></div>
-                    <div class="card p-4 rounded-lg"><span class="font-semibold text-white block">SQL (MySQL, SQLite)</span> <span class="text-sm text-[var(--text-secondary)]">ปานกลาง</span></div>
-                     <div class="card p-4 rounded-lg"><span class="font-semibold text-white block">PostgreSQL</span> <span class="text-sm text-[var(--text-secondary)]">เริ่มต้น</span></div>
-                     <div class="card p-4 rounded-lg"><span class="font-semibold text-white block">Prisma ORM</span> <span class="text-sm text-[var(--text-secondary)]">เริ่มต้น</span></div>
-                    <div class="card p-4 rounded-lg"><span class="font-semibold text-white block">Firebase</span> <span class="text-sm text-[var(--text-secondary)]">เริ่มต้น</span></div>
-                    <div class="card p-4 rounded-lg"><span class="font-semibold text-white block">MongoDB</span> <span class="text-sm text-[var(--text-secondary)]">เริ่มต้น</span></div>
-                </div>
-            </div>
-
-            <div>
-                <h3 class="text-2xl md:text-3xl font-semibold text-[var(--accent-2)] mb-6 text-center">กำลังศึกษาและฝึกฝน</h3>
-                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 text-center">
-                    <div class="card p-4 rounded-lg"><span class="font-semibold text-white">PHP</span></div>
-                    <div class="card p-4 rounded-lg"><span class="font-semibold text-white">Docker</span></div>
-                    <div class="card p-4 rounded-lg"><span class="font-semibold text-white">TypeScript</span></div>
-                     <div class="card p-4 rounded-lg"><span class="font-semibold text-white">Next.js</span></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="education" class="py-16 md:py-24 px-6 bg-[var(--bg-primary)]">
-        <div class="max-w-4xl mx-auto animate-fade-in">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">การศึกษา</h2>
-            <div class="space-y-8">
-                <div class="card p-6 rounded-lg">
-                    <h3 class="text-xl md:text-2xl font-semibold text-white">มัธยมศึกษาปีที่ 6</h3>
-                    <p class="text-[var(--text-secondary)] mt-2">โรงเรียนถาวรานุกูล, สมุทรสงคราม (จบปี 2567)</p>
-                </div>
-                <div class="card p-6 rounded-lg">
-                    <h3 class="text-xl md:text-2xl font-semibold text-white">ปวส. สาขาคอมพิวเตอร์ธุรกิจ</h3>
-                    <p class="text-[var(--text-secondary)] mt-2">วิทยาลัยเทคนิคสมุทรสงคราม (กำลังศึกษา ปี 1/2568)</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
+    <!-- Experience/Projects Section -->
     <section id="experience" class="py-16 md:py-24 px-6 bg-[var(--bg-secondary)]">
         <div class="max-w-4xl mx-auto animate-fade-in">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">ประสบการณ์ / โปรเจกต์</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- โปรเจกต์ 1 -->
                 <div class="card p-6 rounded-lg flex flex-col">
+                    <img src="11.png" alt="เพื่อนช่วยจำ Screenshot" class="w-full h-40 object-cover rounded-lg mb-4">
                     <h3 class="text-xl md:text-2xl font-semibold text-white mb-3">เว็บแอป "เพื่อนช่วยจำ" (Full Stack)</h3>
-                    <p class="text-[var(--text-secondary)] mb-4 text-sm flex-grow">เว็บแอปจดโน้ตสไตล์ Notion แบบง่ายๆ มีระบบสมาชิก, Markdown, แท็ก, กรอง, โหมดโฟกัส</p>
+                    <p class="text-[var(--text-secondary)] mb-4 text-sm flex-grow">เว็บแอปจดโน้ตสไตล์ Notion ใช้งานง่าย มีระบบสมาชิก, Markdown, แท็ก, ฟิลเตอร์, และโหมดโฟกัส ช่วยเพิ่มประสิทธิภาพการจดบันทึก</p>
                     <div class="text-xs mb-4">
                         <span class="font-semibold text-white">Tech:</span> Node.js, Express, Prisma, PostgreSQL, JWT, bcrypt, HTML, Tailwind, JS, Neon, Render, Vercel
                     </div>
-                 <a href="https://chuai-jam.vercel.app/" target="_blank" class="mt-auto inline-block text-[var(--accent-1)] hover:underline font-semibold">ดูโปรเจกต์ &gt;</a>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="card p-6 rounded-lg flex flex-col">
-                    <h3 class="text-xl md:text-2xl font-semibold text-white mb-3">แจก mini-ecommerce-microservices" (Full Stack)</h3>
-                    <p class="text-[var(--text-secondary)] mb-4 text-sm flex-grow">เmini-ecommerce-microservices open soucs free</p>
-                    <div class="text-xs mb-4">
-                        <span class="font-semibold text-white">Tech:</span> github  
-                    </div>
-                    <a href="https://github.com/Assfirst/mini-ecommerce-microservices" target="_blank" class="mt-auto inline-block text-[var(--accent-1)] hover:underline font-semibold">ดูโปรเจกต์ &gt;</a>
+                    <a href="https://chuai-jam.vercel.app/" target="_blank" class="mt-auto inline-block text-[var(--accent-1)] hover:underline font-semibold animate-subtle-pulse">ดูโปรเจกต์ ></a>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- โปรเจกต์ 2 -->
                 <div class="card p-6 rounded-lg flex flex-col">
-                    <h3 class="text-xl md:text-2xl font-semibold text-white mb-3">แจกระบบร้านค้าออนไลน์พื้นฐาน Ruam-Mit-Store" (Full Stack)</h3>
-                    <p class="text-[var(--text-secondary)] mb-4 text-sm flex-grow">แจกระบบร้านค้าออนไลน์พื้นฐาน Ruam-Mit-Store open soucs free</p>
+                    <img src="22.jpg" alt="Mini E-commerce Screenshot" class="w-full h-40 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl md:text-2xl font-semibold text-white mb-3">Mini E-commerce Microservices (Full Stack)</h3>
+                    <p class="text-[var(--text-secondary)] mb-4 text-sm flex-grow">โปรเจกต์ open-source ระบบร้านค้าออนไลน์ขนาดเล็ก ใช้สถาปัตยกรรม Microservices เพื่อการพัฒนาและปรับขนาดได้ง่าย</p>
                     <div class="text-xs mb-4">
-                        <span class="font-semibold text-white">Tech:</span>  github
+                        <span class="font-semibold text-white">Tech:</span> Node.js, Express, Docker, GitHub
                     </div>
-                    <a href="https://github.com/Assfirst/Ruam-Mit-Store" target="_blank" class="mt-auto inline-block text-[var(--accent-1)] hover:underline font-semibold">ดูโปรเจกต์ &gt;</a>
+                    <a href="https://github.com/Assfirst/mini-ecommerce-microservices" target="_blank" class="mt-auto inline-block text-[var(--accent-1)] hover:underline font-semibold animate-subtle-pulse">ดูโปรเจกต์ ></a>
                 </div>
-                    
-                    
+
+                <!-- โปรเจกต์ 3 -->
                 <div class="card p-6 rounded-lg flex flex-col">
+                    <img src="33.jpg" alt="Ruam Mit Store Screenshot" class="w-full h-40 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl md:text-2xl font-semibold text-white mb-3">ระบบร้านค้าออนไลน์ Ruam-Mit-Store (Full Stack)</h3>
+                    <p class="text-[var(--text-secondary)] mb-4 text-sm flex-grow">โปรเจกต์ open-source ระบบร้านค้าออนไลน์พื้นฐาน รองรับการจัดการสินค้าและคำสั่งซื้อ เหมาะสำหรับผู้เริ่มต้น</p>
+                    <div class="text-xs mb-4">
+                        <span class="font-semibold text-white">Tech:</span> Node.js, Express, MongoDB, GitHub
+                    </div>
+                    <a href="https://github.com/Assfirst/Ruam-Mit-Store" target="_blank" class="mt-auto inline-block text-[var(--accent-1)] hover:underline font-semibold animate-subtle-pulse">ดูโปรเจกต์ ></a>
+                </div>
+
+                <!-- โปรเจกต์ 4 -->
+                <div class="card p-6 rounded-lg flex flex-col">
+                    <img src="44.png" alt="ครูคอมพิวเตอร์ Screenshot" class="w-full h-40 object-cover rounded-lg mb-4">
                     <h3 class="text-xl md:text-2xl font-semibold text-white mb-3">Landing Page ครูคอมพิวเตอร์</h3>
-                     <p class="text-[var(--text-secondary)] mb-4 text-sm flex-grow">ออกแบบและพัฒนา Landing Page แบบง่ายๆ ด้วย HTML, CSS</p>
-                     <div class="text-xs mb-4">
+                    <p class="text-[var(--text-secondary)] mb-4 text-sm flex-grow">ออกแบบและพัฒนา Landing Page เรียบง่ายสำหรับครูสอนคอมพิวเตอร์ เพื่อโปรโมตคอร์สเรียนออนไลน์</p>
+                    <div class="text-xs mb-4">
                         <span class="font-semibold text-white">Tech:</span> HTML, CSS
                     </div>
-                    <a href="https://assfirst.github.io/lin1/index.html" target="_blank" class="mt-auto inline-block text-[var(--accent-1)] hover:underline font-semibold">ดูโปรเจกต์ &gt;</a>
+                    <a href="https://assfirst.github.io/lin1/index.html" target="_blank" class="mt-auto inline-block text-[var(--accent-1)] hover:underline font-semibold animate-subtle-pulse">ดูโปรเจกต์ ></a>
                 </div>
-                    
+
+                <!-- โปรเจกต์ 5 -->
                 <div class="card p-6 rounded-lg flex flex-col">
+                    <img src="55.png" alt="ร.ร.ปลวกแดง Screenshot" class="w-full h-40 object-cover rounded-lg mb-4">
                     <h3 class="text-xl md:text-2xl font-semibold text-white mb-3">Landing Page ร.ร.ปลวกแดงฯ</h3>
-                     <p class="text-[var(--text-secondary)] mb-4 text-sm flex-grow">ออกแบบและพัฒนา Landing Page แบบง่ายๆ ด้วย HTML, CSS</p>
-                     <div class="text-xs mb-4">
+                    <p class="text-[var(--text-secondary)] mb-4 text-sm flex-grow">ออกแบบและพัฒนา Landing Page สำหรับโรงเรียนปลวกแดง เพื่อประชาสัมพันธ์ข้อมูลโรงเรียน</p>
+                    <div class="text-xs mb-4">
                         <span class="font-semibold text-white">Tech:</span> HTML, CSS
                     </div>
-                    <a href="https://assfirst.github.io/land2/index2.html" target="_blank" class="mt-auto inline-block text-[var(--accent-1)] hover:underline font-semibold">ดูโปรเจกต์ &gt;</a>
+                    <a href="https://assfirst.github.io/land2/index2.html" target="_blank" class="mt-auto inline-block text-[var(--accent-1)] hover:underline font-semibold animate-subtle-pulse">ดูโปรเจกต์ ></a>
                 </div>
-                
             </div>
         </div>
     </section>
 
-    
-    <section id="contact" class="py-16 md:py-24 px-6 bg-[var(--bg-primary)]">
-        <div class="max-w-4xl mx-auto text-center animate-fade-in">
-            <h2 class="text-3xl md:text-4xl font-bold mb-8">ติดต่อผม</h2>
-            <p class="text-lg md:text-xl text-[var(--text-primary)] mb-8">สนใจร่วมงาน หรือมีคำถาม? ติดต่อผมได้เลยครับ!</p>
-            <div class="space-y-4 text-lg">
-                <p class="flex items-center justify-center gap-2">
-                    <svg class="w-6 h-6 text-[var(--accent-2)]" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
-                    <a href="mailto:kingfirst000@gmail.com" class="text-[var(--accent-2)] hover:underline"><span class="__cf_email__" data-cfemail="98f3f1f6fffef1eaebecc8c8c8d8fff5f9f1f4b6fbf7f5">[email&#160;protected]</span></a>
-                </p>
-                <p class="flex items-center justify-center gap-2">
-                     <svg class="w-6 h-6 text-[var(--accent-3)]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.04c-5.5 0-9.96 4.46-9.96 9.96 0 4.4 2.86 8.13 6.84 9.45.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.15-1.1-1.46-1.1-1.46-.9-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0112 6.8c.85.004 1.71.11 2.52.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.67.94.67 1.9v2.82c0 .27.18.58.69.48A9.96 9.96 0 0022 12c0-5.5-4.46-9.96-9.96-9.96z"></path></svg>
-                    <a href="https://github.com/Assfirst" target="_blank" class="text-[var(--accent-3)] hover:underline">Assfirst</a>
-                </p>
-                <p class="flex items-center justify-center gap-2">
-                     <svg class="w-6 h-6 text-[var(--accent-1)]" fill="currentColor" viewBox="0 0 24 24"><path d="M16.84 6.88c.45-.44.45-1.16 0-1.6-.44-.44-1.16-.44-1.6 0l-2.76 2.76c-.33.33-.51.77-.51 1.24v.97c0 .47.18.91.51 1.24l2.76 2.76c.44.44 1.16.44 1.6 0 .45-.44.45-1.16 0-1.6L15.06 12l1.78-1.78 1.78 1.78c.44.44 1.16.44 1.6 0 .45-.44.45-1.16 0-1.6l-2.76-2.76c-.33-.33-.51-.77-.51-1.24v-.97c0-.47.18-.91.51-1.24l2.76-2.76c.44-.44 1.16-.44 1.6 0 .45.44.45-1.16 0 1.6L18.94 12l-2.1 2.12zM7.16 17.12c-.45.44-.45 1.16 0 1.6.44.44 1.16.44 1.6 0l2.76-2.76c.33-.33.51-.77.51-1.24v-.97c0-.47-.18-.91-.51-1.24l-2.76-2.76c-.44-.44-1.16-.44-1.6 0-.45.44-.45 1.16 0 1.6L8.94 12l-1.78 1.78-1.78-1.78c-.44-.44-1.16-.44-1.6 0-.45.44-.45 1.16 0 1.6l2.76 2.76c.33.33.51.77.51 1.24v.97c0 .47-.18.91-.51 1.24l-2.76 2.76c-.44.44-1.16.44-1.6 0-.45-.44-.45-1.16 0-1.6L5.06 12l2.1-2.12z"></path></svg>
-                     <a href="https://instagram.com/chakron_2006" target="_blank" class="text-[var(--accent-1)] hover:underline">@chakron_2006</a>
-                </p>
-                <p class="flex items-center justify-center gap-2">
-                     <svg class="w-6 h-6 text-[#4267B2]" fill="currentColor" viewBox="0 0 24 24"><path d="M14 13.5h2.5l.5-3h-3v-2c0-.8.4-1.5 1.5-1.5H17V4.5c-.5-.1-1-.1-1.5-.1-2.5 0-4 1.5-4 4v2.5H9v3h2.5V22h3v-8.5z"></path></svg>
-                     <a href="https://www.facebook.com/chakron2006" target="_blank" class="text-[#6188f5] hover:underline">Chakron Yaraket</a>
-                </p>
+    <!-- About Section -->
+    <section id="about" class="py-16 md:py-24 px-6 bg-[var(--bg-secondary)]">
+        <div class="max-w-4xl mx-auto animate-fade-in">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">เกี่ยวกับผม</h2>
+            <div class="flex flex-col items-center mb-12">
+                <img src="2.jpg" alt="Chakron Yaraket - Self-Taught Developer" class="w-40 h-40 rounded-full object-cover mb-4 animate-rgb-border">
+                <div class="text-center text-[var(--text-primary)] text-lg md:text-xl">
+                    <p class="mb-4">
+                        ผมชื่อเฟิร์ส อายุ 19 ปี เป็นโปรแกรมเมอร์ที่เรียนรู้ด้วยตัวเอง ชอบลงมือทำจริง มีความหลงใหลในการสร้างสรรค์สิ่งใหม่ๆ ด้วยโค้ด
+                    </p>
+                    <p>
+                        ถึงแม้จะมี ADHD, ซึมเศร้า, และวิตกกังวล ผมก็ไม่หยุดที่จะเรียนรู้และพัฒนาตัวเองทุกวัน เพื่อเป้าหมายในการเป็นนักพัฒนาที่เก่งขึ้น
+                    </p>
+                </div>
             </div>
-           
+            <h3 class="text-2xl font-semibold text-center mb-6">ทักษะ</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <h4 class="text-xl font-semibold mb-2">Frontend</h4>
+                    <p class="text-[var(--text-secondary)]">HTML, CSS, JavaScript, Tailwind CSS</p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold mb-2">Backend</h4>
+                    <p class="text-[var(--text-secondary)]">Node.js, Express, Prisma, JWT, bcrypt</p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold mb-2">Database</h4>
+                    <p class="text-[var(--text-secondary)]">PostgreSQL, MongoDB, Neon</p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold mb-2">Tools</h4>
+                    <p class="text-[var(--text-secondary)]">Docker, GitHub, Render, Vercel</p>
+                </div>
+            </div>
         </div>
     </section>
 
-
-    <footer class="py-8 text-center text-sm">
-        <p>&copy; 2025 Chakron Yaraket. Built with Passion & Code.</p>
+    <!-- Footer -->
+    <footer class="py-8 text-center bg-[var(--bg-primary)]">
+        <p class="text-[var(--text-secondary)]">© 2025 Chakron Yaraket. All rights reserved.</p>
     </footer>
-
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-    <script>
-         // Typing Effect (Keep as is, maybe adjust strings/speed)
-         const typedElements = document.querySelectorAll('.typing');
-         if (typedElements.length > 0) {
-             const typedStrings = ['โปรแกรมเมอร์', 'นักพัฒนาเว็บ', 'เรียนรู้ตลอดเวลา']; // Adjusted strings
-             let currentStringIndex = 0;
-             let currentCharIndex = 0;
-             let isDeleting = false;
-             let typingDelay = 120; // Slightly faster typing
-             let deletingDelay = 60; // Slightly faster deleting
-             let pauseDelay = 1500; // Pause before deleting
-
-             function typeText() {
-                 const currentElement = typedElements[0];
-                 const currentString = typedStrings[currentStringIndex];
-                 let currentDelay = typingDelay;
-
-                 if (!isDeleting && currentCharIndex < currentString.length) {
-                     currentElement.textContent += currentString.charAt(currentCharIndex);
-                     currentCharIndex++;
-                 } else if (isDeleting && currentCharIndex > 0) {
-                     currentElement.textContent = currentString.substring(0, currentCharIndex - 1);
-                     currentCharIndex--;
-                     currentDelay = deletingDelay;
-                 } else if (!isDeleting && currentCharIndex === currentString.length) {
-                     // Pause before deleting
-                     currentDelay = pauseDelay;
-                     isDeleting = true;
-                 } else if (isDeleting && currentCharIndex === 0) {
-                     isDeleting = false;
-                     currentStringIndex = (currentStringIndex + 1) % typedStrings.length;
-                 }
-                 setTimeout(typeText, currentDelay);
-             }
-             typeText();
-         }
-
-         // Mobile Menu Toggle (Keep as is)
-         const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-         const mobileMenu = document.getElementById('mobile-menu');
-         const mobileMenuClose = document.getElementById('mobile-menu-close');
-         const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
-
-         if (mobileMenuToggle && mobileMenu && mobileMenuClose) {
-             mobileMenuToggle.addEventListener('click', () => {
-                 mobileMenu.classList.remove('hidden');
-             });
-             mobileMenuClose.addEventListener('click', () => {
-                 mobileMenu.classList.add('hidden');
-             });
-             // Close menu when a link is clicked
-             mobileMenuLinks.forEach(link => {
-                 link.addEventListener('click', () => {
-                     mobileMenu.classList.add('hidden');
-                 });
-             });
-         }
-    </script>
 </body>
 </html>
